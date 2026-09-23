@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESC}}" />
+  <link rel="canonical" href="https://dvxlabs.example.com/{{PATH}}" /><!-- PLACEHOLDER: replace with the real domain -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DVX Labs" />
+  <meta property="og:title" content="{{TITLE}}" />
+  <meta property="og:description" content="{{DESC}}" />
+  <meta property="og:url" content="https://dvxlabs.example.com/{{PATH}}" /><!-- PLACEHOLDER -->
+  <meta property="og:image" content="https://dvxlabs.example.com/og-image.svg" /><!-- PLACEHOLDER -->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{TITLE}}" />
+  <meta name="twitter:description" content="{{DESC}}" />
+  <meta name="twitter:image" content="https://dvxlabs.example.com/og-image.svg" /><!-- PLACEHOLDER -->
+  <meta name="twitter:site" content="@dvxlabs" /><!-- PLACEHOLDER: real handle -->
+
+  <meta name="theme-color" content="#070812" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "DVX Labs",
+    "slogan": "Digital ideas, built real.",
+    "description": "Independent full-stack digital studio designing and developing complete digital experiences: websites, dashboards, booking systems, e-commerce platforms, APIs and full-stack applications.",
+    "url": "https://dvxlabs.example.com/{{PATH}}",
+    "logo": "https://dvxlabs.example.com/favicon.svg",
+    "image": "https://dvxlabs.example.com/og-image.svg",
+    "areaServed": "Worldwide",
+    "knowsAbout": ["Web Development", "Interface Design", "API Engineering", "Performance Optimisation"],
+    "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "email": "hello@dvxlabs.example.com" }
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    /* run before paint: reveal intro only once per session and skip it for reduced motion */
+    (function () {
+      var d = document.documentElement;
+      d.dataset.js = "on";
+      try {
+        if (!sessionStorage.getItem("dvx-intro")) {
+          d.classList.add("intro-pending");
+          sessionStorage.setItem("dvx-intro", "1");
+        }
+      } catch (e) { /* storage unavailable */ }
+    })();
+  </script>
+  <style>
+    /* intro gating: markup hidden entirely unless this session shows it */
+    .intro { display: none; }
+    html.intro-pending .intro { display: grid; }
+    @media (prefers-reduced-motion: reduce) {
+      html.intro-pending .intro { display: none; }
+    }
+  </style>
+</head>
+<body data-page="{{PAGEKEY}}">
+  <!-- ====================== INTRO SEQUENCE (once per session) ====================== -->
+    <div class="intro" id="intro" aria-hidden="true">
+      <div class="intro-logo"></div>
+      <div class="intro-line"></div>
+    </div>
+
+    <!-- top scroll progress line -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ====================== AMBIENT BACKGROUND ====================== -->
+  <div class="scene-bg" aria-hidden="true">
+    <div class="glow-orb violet"></div>
+    <div class="glow-orb cyan"></div>
+    <div class="glow-orb deep"></div>
+  </div>
+
+  <!-- ====================== CUSTOM CURSOR (desktop only) ====================== -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- page-wide cursor light -->
+  <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+

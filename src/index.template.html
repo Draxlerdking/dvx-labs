@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DVX Labs — Independent Full-Stack Studio | Digital ideas, built real.</title>
+  <meta name="description" content="DVX Labs designs and develops complete digital experiences for businesses ready to move beyond a basic online presence — strategy, interface, full-stack engineering, deployment and launch support." />
+  <link rel="canonical" href="https://dvxlabs.example.com/" /><!-- PLACEHOLDER: replace with the real domain -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DVX Labs" />
+  <meta property="og:title" content="DVX Labs — Digital ideas, built real." />
+  <meta property="og:description" content="Independent full-stack digital studio: strategy, design, code and launch for businesses ready to move beyond a basic online presence." />
+  <meta property="og:url" content="https://dvxlabs.example.com/" /><!-- PLACEHOLDER -->
+  <meta property="og:image" content="https://dvxlabs.example.com/og-image.svg" /><!-- PLACEHOLDER -->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DVX Labs — Digital ideas, built real." />
+  <meta name="twitter:description" content="Independent full-stack digital studio: strategy, design, code and launch." />
+  <meta name="twitter:image" content="https://dvxlabs.example.com/og-image.svg" /><!-- PLACEHOLDER -->
+  <meta name="twitter:site" content="@dvxlabs" /><!-- PLACEHOLDER: real handle -->
+
+  <meta name="theme-color" content="#070812" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "DVX Labs",
+    "slogan": "Digital ideas, built real.",
+    "description": "Independent full-stack digital studio designing and developing complete digital experiences: websites, dashboards, booking systems, e-commerce platforms, APIs and full-stack applications.",
+    "url": "https://dvxlabs.example.com/",
+    "logo": "https://dvxlabs.example.com/favicon.svg",
+    "image": "https://dvxlabs.example.com/og-image.svg",
+    "areaServed": "Worldwide",
+    "knowsAbout": ["Web Development", "Interface Design", "API Engineering", "Performance Optimisation"],
+    "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "email": "hello@dvxlabs.example.com" }
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    /* run before paint: reveal intro only once per session and skip it for reduced motion */
+    (function () {
+      var d = document.documentElement;
+      d.dataset.js = "on";
+      try {
+        if (!sessionStorage.getItem("dvx-intro")) {
+          d.classList.add("intro-pending");
+          sessionStorage.setItem("dvx-intro", "1");
+        }
+      } catch (e) { /* storage unavailable */ }
+    })();
+  </script>
+  <style>
+    /* intro gating: markup hidden entirely unless this session shows it */
+    .intro { display: none; }
+    html.intro-pending .intro { display: grid; }
+    @media (prefers-reduced-motion: reduce) {
+      html.intro-pending .intro { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ====================== INTRO SEQUENCE (once per session) ====================== -->    <div class="intro" id="intro" aria-hidden="true">
+      <div class="intro-logo"></div>
+      <div class="intro-line"></div>
+    </div>
+
+    <!-- top scroll progress line -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ====================== AMBIENT BACKGROUND ====================== -->
+  <div class="scene-bg" aria-hidden="true">
+    <div class="glow-orb violet"></div>
+    <div class="glow-orb cyan"></div>
+    <div class="glow-orb deep"></div>
+  </div>
+
+  <!-- ====================== CUSTOM CURSOR (desktop only) ====================== -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- page-wide cursor light -->
+  <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ====================== NAVIGATION ====================== -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#hero" aria-label="DVX Labs — back to top">
+        <span class="brand-mark" aria-hidden="true"><span>X</span></span>
+        <span>DVX Labs<small>DIGITAL STUDIO</small></span>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn btn-primary btn-sm" href="#contact">Start a project</a></li>
+        </ul>
+      </nav>
+
+      <button class="cmdk-trigger" id="cmdkTrigger" type="button" aria-label="Open command menu, Control K">Search <span aria-hidden="true">⌘K</span></button>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ====================== HERO ====================== -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <canvas id="constellation" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="status-pill"><span class="status-dot" aria-hidden="true"></span>Available for select projects</p>
+          <p class="kicker">Independent full-stack studio</p>
+          <h1 id="hero-title" data-scramble>Digital ideas, <span class="grad">built real.</span></h1>
+          <p class="lede">DVX Labs designs and develops complete digital experiences for businesses ready to move beyond a basic online presence.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg magnetic" href="#contact">Build with DVX <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost btn-lg magnetic" href="#work">Explore the work</a>
+          </div>
+          <p class="hero-meta">Strategy / Design / Code / Launch</p>
+        </div>
+
+        <!-- Interactive 3D development workspace -->
+        <div class="stage-wrap" id="stageWrap" aria-hidden="true">
+          <div class="workspace" id="workspace">
+            <div class="ws-glass">
+              <div class="ws-titlebar">
+                <span class="dots"><i></i><i></i><i></i></span>
+                <span class="path">dvx-labs — experience.ts</span>
+              </div>
+              <div class="ws-body">
+                <div class="ws-rail" id="wsRail">
+                  <button type="button" class="on" data-file="experience">src/experience.ts</button>
+                  <button type="button" data-file="deploy">launch.sh</button>
+                  <button type="button" data-file="status">status.log</button>
+                </div>
+                <div class="ws-code" id="wsCode">
+                  <span class="ln"><span class="c-key">const</span> experience = {</span>
+                  <span class="ln">  strategy: <span class="c-str">"clear"</span>,</span>
+                  <span class="ln">  interface: <span class="c-str">"thoughtful"</span>,</span>
+                  <span class="ln">  performance: <span class="c-str">"fast"</span>,</span>
+                  <span class="ln">  result: <span class="c-str">"built to work"</span></span>
+                  <span class="ln">};</span>
+                  <span class="ln"> </span>
+                  <span class="ln"><span class="c-key">export default</span> <span class="c-fn">launch</span>(experience);</span>
+                </div>
+              </div>
+            </div>
+            <div class="ws-card perf">
+              <span class="lbl">Performance</span>
+              <span class="val">98<span class="c-dim">/100</span></span>
+              <div class="meter"><i></i></div>
+            </div>
+            <div class="ws-card deploy">
+              <span class="lbl">Deployment</span>
+              <span class="val ok">● production — live</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== CAPABILITIES TICKER ====================== -->
+    <div class="ticker" aria-label="Capabilities">
+      <div class="ticker-track">
+        <div class="ticker-item">Strategy</div>
+        <div class="ticker-item">Interface Design</div>
+        <div class="ticker-item">Full-Stack Development</div>
+        <div class="ticker-item">API Engineering</div>
+        <div class="ticker-item">Performance</div>
+        <div class="ticker-item">Deployment</div>
+        <div class="ticker-item">Launch Support</div>
+        <div class="ticker-item" aria-hidden="true">Strategy</div>
+        <div class="ticker-item" aria-hidden="true">Interface Design</div>
+        <div class="ticker-item" aria-hidden="true">Full-Stack Development</div>
+        <div class="ticker-item" aria-hidden="true">API Engineering</div>
+        <div class="ticker-item" aria-hidden="true">Performance</div>
+        <div class="ticker-item" aria-hidden="true">Deployment</div>
+        <div class="ticker-item" aria-hidden="true">Launch Support</div>
+      </div>
+    </div>
+
+    <!-- ====================== EXPERTISE ====================== -->
+    <section class="section" id="expertise" aria-labelledby="expertise-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Expertise</p>
+          <h2 class="section-title" id="expertise-title" data-scramble>One studio. Full digital stack.</h2>
+          <p class="section-copy">From the first wireframe to the production database, every layer is considered together—so the finished product feels consistent, performs well, and is easy to grow.</p>
+        </div>
+        <div class="stack-grid">
+          <article class="panel reveal" data-tilt-light>
+            <i class="corner tl" aria-hidden="true"></i><i class="corner tr" aria-hidden="true"></i><i class="corner bl" aria-hidden="true"></i><i class="corner br" aria-hidden="true"></i>
+            <div class="panel-head">
+              <span class="panel-idx">01</span>
+              <span class="panel-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+              </span>
+            </div>
+            <h3>Frontend</h3>
+            <span class="panel-tag">Interfaces that feel engineered</span>
+            <ul class="chips">
+              <li>React</li><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li>
+              <li>Responsive interfaces</li><li>Accessible UI</li><li>Interactive animation</li>
+            </ul>
+            <span class="panel-connector" aria-hidden="true"></span>
+          </article>
+          <article class="panel reveal" data-tilt-light>
+            <i class="corner tl" aria-hidden="true"></i><i class="corner tr" aria-hidden="true"></i><i class="corner bl" aria-hidden="true"></i><i class="corner br" aria-hidden="true"></i>
+            <div class="panel-head">
+              <span class="panel-idx">02</span>
+              <span class="panel-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+              </span>
+            </div>
+            <h3>Backend</h3>
+            <span class="panel-tag">Systems built to be trusted</span>
+            <ul class="chips">
+              <li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>REST APIs</li>
+              <li>GraphQL APIs</li><li>Authentication</li><li>Database architecture</li>
+            </ul>
+            <span class="panel-connector" aria-hidden="true"></span>
+          </article>
+          <article class="panel reveal" data-tilt-light>
+            <i class="corner tl" aria-hidden="true"></i><i class="corner tr" aria-hidden="true"></i><i class="corner bl" aria-hidden="true"></i><i class="corner br" aria-hidden="true"></i>
+            <div class="panel-head">
+              <span class="panel-idx">03</span>
+              <span class="panel-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+              </span>
+            </div>
+            <h3>Delivery</h3>
+            <span class="panel-tag">Shipped, measured, supported</span>
+            <ul class="chips">
+              <li>Payment integration</li><li>CMS integration</li><li>Deployment</li><li>Hosting</li>
+              <li>Performance optimisation</li><li>Testing</li><li>Launch support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== SELECTED WORK ====================== -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Selected work</p>
+          <h2 class="section-title" id="work-title" data-scramble>Problems solved, not just pages built.</h2>
+          <p class="section-copy">Each case study presents the challenge, the thinking behind the build, and the outcome—not just a polished screenshot.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card reveal" data-tilt>
+            <i class="corner tl" aria-hidden="true"></i><i class="corner tr" aria-hidden="true"></i><i class="corner bl" aria-hidden="true"></i><i class="corner br" aria-hidden="true"></i>
+            <div class="work-media">
+              <div class="ui-prev" aria-hidden="true">
+                <div class="up"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="main"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+              <div class="ui-placeholder"><p>Featured project coming soon</p></div>
+            </div>
+            <div class="work-body">
+              <div class="work-top">
+                <span class="work-cat">Web platform</span>
+                <span class="badge amber">In preparation</span>
+              </div>
+              <h3>Project 01</h3>
+              <p>Project details being prepared.</p>
+              <ul class="tags">
+                <li>Placeholder</li><li>Details soon</li>
+              </ul>
+              <div class="work-links">
+                <a href="#contact" aria-label="Project 01 case study — discuss a project like this">Case study</a>
+                <a href="#contact" aria-label="Project 01 live site — discuss a project like this">Live site</a>
+              </div>
+            </div>
+          </article>
+          <article class="work-card reveal" data-tilt>
+            <i class="corner tl" aria-hidden="true"></i><i class="corner tr" aria-hidden="true"></i><i class="corner bl" aria-hidden="true"></i><i class="corner br" aria-hidden="true"></i>
+            <div class="work-media">
+              <div class="ui-prev" aria-hidden="true">
+                <div class="up"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="main"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+              <div class="ui-placeholder"><p>Featured project coming soon</p></div>
+            </div>
+            <div class="work-body">
+              <div class="work-top">
+                <span class="work-cat">Booking system</span>
+                <span class="badge amber">In preparation</span>
+              </div>
+              <h3>Project 02</h3>
+              <p>Project details being prepared.</p>
+              <ul class="tags">
+                <li>Placeholder</li><li>Details soon</li>
+              </ul>
+              <div class="work-links">
+                <a href="#contact" aria-label="Project 02 case study — discuss a project like this">Case study</a>
+                <a href="#contact" aria-label="Project 02 live site — discuss a project like this">Live site</a>
+              </div>
+            </div>
+          </article>
+          <article class="work-card reveal" data-tilt>
+            <i class="corner tl" aria-hidden="true"></i><i class="corner tr" aria-hidden="true"></i><i class="corner bl" aria-hidden="true"></i><i class="corner br" aria-hidden="true"></i>
+            <div class="work-media">
+              <div class="ui-prev" aria-hidden="true">
+                <div class="up"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="main"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+              <div class="ui-placeholder"><p>Featured project coming soon</p></div>
+            </div>
+            <div class="work-body">
+              <div class="work-top">
+                <span class="work-cat">E-commerce</span>
+                <span class="badge amber">In preparation</span>
+              </div>
+              <h3>Project 03</h3>
+              <p>Project details being prepared.</p>
+              <ul class="tags">
+                <li>Placeholder</li><li>Details soon</li>
+              </ul>
+              <div class="work-links">
+                <a href="#contact" aria-label="Project 03 case study — discuss a project like this">Case study</a>
+                <a href="#contact" aria-label="Project 03 live site — discuss a project like this">Live site</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PROCESS ====================== -->
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-head center reveal">
+          <p class="kicker">Process</p>
+          <h2 class="section-title" id="process-title" data-scramble>A clear path from idea to live.</h2>
+        </div>
+        <div class="process-grid">
+          <article class="step reveal">
+            <span class="step-num">01</span>
+            <h3>Discover</h3>
+            <p>Clarify the goal, audience, required features, constraints, and definition of success.</p>
+            <span class="step-line" aria-hidden="true"></span>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">02</span>
+            <h3>Define</h3>
+            <p>Create the scope, technical direction, visual concept, timeline, and project milestones.</p>
+            <span class="step-line" aria-hidden="true"></span>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">03</span>
+            <h3>Develop</h3>
+            <p>Design, build and test in focused iterations with regular previews and honest communication.</p>
+            <span class="step-line" aria-hidden="true"></span>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">04</span>
+            <h3>Deliver</h3>
+            <p>Deploy, monitor, document and support the product after launch—so it keeps working as it grows.</p>
+            <span class="step-line" aria-hidden="true"></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== ABOUT ====================== -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <p class="kicker">About the studio</p>
+          <h2 class="section-title" id="about-title" data-scramble>A digital engineering lab, run like a studio.</h2>
+          <p>DVX Labs is an independent full-stack digital studio. We work across <span class="grad">strategy, interface design, engineering and launch</span>—treating each product as one connected system rather than a relay race between disciplines.</p>
+          <p>We favour direct communication, measurable outcomes and technology chosen for the problem at hand. No bloated handovers, no disappearing act after deployment.</p>
+          <div class="hero-cta">
+            <a class="btn btn-ghost magnetic" href="#contact">Discuss a project</a>
+          </div>
+        </div>
+        <aside class="terminal reveal" aria-label="Studio profile in terminal form">
+          <div class="terminal-bar"><i></i><i></i><i></i></div>
+          <div class="terminal-body" id="terminalBody">
+            <div class="t-row"><span class="t-key">$ whoami</span></div>
+            <div class="t-row"><span class="t-val" data-typeline>dvx-labs — independent full-stack studio</span></div>
+            <div class="t-row"><span class="t-key">$ stack --core</span></div>
+            <div class="t-row"><span class="t-val" data-typeline>typescript · react · node · postgres</span></div>
+            <div class="t-row"><span class="t-key">$ status</span></div>
+            <div class="t-row"><span class="t-val" data-typeline>accepting select projects</span></div>
+            <div class="t-cursor-row"><span class="blink" aria-hidden="true">▊</span></div>
+          </div>          </aside>
+      </div>
+    </section>
+
+    <!-- ====================== CONTACT ====================== -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Contact</p>
+          <h2 class="section-title" id="contact-title" data-scramble>Tell us what you're building.</h2>
+          <p class="section-copy">A short brief is enough—we'll reply with honest feedback on scope, timing and fit.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <p>Prefer email? Write to us directly and include the same details.</p>
+            <ul class="contact-meta">
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 6L22 7"/></svg>
+                <div><span class="cm-lbl">Email</span><a href="mailto:hello@dvxlabs.example.com">hello@dvxlabs.example.com</a><!-- PLACEHOLDER: real email --></div>
+              </li>
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                <div><span class="cm-lbl">Response time</span><span>Within 1–2 business days</span></div>
+              </li>
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg>
+                <div><span class="cm-lbl">Availability</span><span>Available for select projects</span></div>
+              </li>
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                <div><span class="cm-lbl">GitHub</span><a href="https://github.com/dvxlabs" rel="noopener noreferrer">github.com/dvxlabs</a><!-- PLACEHOLDER --></div>
+              </li>
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <div><span class="cm-lbl">LinkedIn</span><a href="https://www.linkedin.com/company/dvxlabs" rel="noopener noreferrer">linkedin.com/company/dvxlabs</a><!-- PLACEHOLDER --></div>
+              </li>
+            </ul>
+          </div>
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+                <span class="field-error" id="f-name-err" role="status"></span>
+              </div>
+              <div class="field">
+                <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com" />
+                <span class="field-error" id="f-email-err" role="status"></span>
+              </div>
+              <div class="field full">
+                <label for="f-type">Project type</label>
+                <select id="f-type" name="projectType">
+                  <option value="" selected>Select a project type</option>
+                  <option>Website</option>
+                  <option>Web application / dashboard</option>
+                  <option>E-commerce</option>
+                  <option>Booking system</option>
+                  <option>API / backend</option>
+                  <option>Something else</option>
+                </select>
+                <span class="field-error" role="status"></span>
+              </div>
+              <div class="field full">
+                <label for="f-msg">Project brief <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="f-msg" name="message" rows="5" required placeholder="What are you building, and what does success look like?"></textarea>
+                <span class="field-error" id="f-msg-err" role="status"></span>
+              </div>
+              <div class="field full">
+                <button class="btn btn-primary btn-lg magnetic" type="submit">Send project brief <span class="arrow" aria-hidden="true">→</span></button>
+                <p class="form-note">Your details are used only to respond to your enquiry.</p>
+              </div>
+            </div>
+          </form>
+          <div class="form-success" id="formSuccess" role="status" tabindex="-1">
+            <div class="big-check" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <h3>Brief received.</h3>
+            <p>Thanks for reaching out—we'll reply within 1–2 business days.</p>
+            <!-- PLACEHOLDER: connect a real form backend (Formspree, Basin, or own endpoint) before launch -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="brand" href="#hero" aria-label="DVX Labs — back to top">
+          <span class="brand-mark" aria-hidden="true"><span>X</span></span>
+          <span>DVX Labs<small>DIGITAL STUDIO</small></span>
+        </a>
+        <p class="footer-note">Digital ideas, built real. Independent full-stack studio for strategy, design, engineering and launch.</p>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> DVX Labs. All rights reserved.</span>
+        <span class="footer-links">
+          <a href="#expertise">Expertise</a>
+          <a href="#work">Work</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </span>
+      </div>
+    </div>
+  </footer>  <!-- ====================== SECTION PROGRESS RAIL ====================== -->
+  <nav class="progress-rail" id="progressRail" aria-label="Section shortcuts">
+    <a href="#hero" aria-label="Intro"><span aria-hidden="true">Intro</span></a>
+    <a href="#expertise" aria-label="Expertise"><span aria-hidden="true">Expertise</span></a>
+    <a href="#work" aria-label="Work"><span aria-hidden="true">Work</span></a>
+    <a href="#process" aria-label="Process"><span aria-hidden="true">Process</span></a>
+    <a href="#about" aria-label="About"><span aria-hidden="true">About</span></a>
+    <a href="#contact" aria-label="Contact"><span aria-hidden="true">Contact</span></a>
+  </nav>
+
+  <!-- ====================== HUD STATUS READOUT ====================== -->
+  <div class="hud" id="hud" aria-hidden="true">
+    <span class="hud-dot"></span>
+    <span id="hudSection">Intro</span>
+    <span aria-hidden="true">·</span>
+    <span id="hudScroll">000%</span>
+    <span aria-hidden="true">·</span>
+    <span class="hud-fps" id="hudFps">-- fps</span>
+    <span aria-hidden="true">·</span>
+    <span class="hud-kbd">Ctrl K</span>
+  </div>
+
+  <!-- ====================== COMMAND PALETTE ====================== -->
+  <div class="cmdk-backdrop" id="cmdkBackdrop">
+    <div class="cmdk" role="dialog" aria-modal="true" aria-label="Command menu">
+      <input class="cmdk-input" id="cmdkInput" type="text" placeholder="Type a command or search…" aria-label="Search commands" aria-controls="cmdkList" aria-autocomplete="list" role="combobox" aria-expanded="false" />
+      <ul class="cmdk-list" id="cmdkList" role="listbox" aria-label="Commands"></ul>
+      <div class="cmdk-empty" id="cmdkEmpty" hidden>No matching command.</div>
+      <div class="cmdk-foot"><span>↑↓ navigate</span><span>↵ select</span><span>esc close</span></div>
+    </div>
+  </div>
+
+  <!-- ====================== TOAST ====================== -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+  <!-- ====================== SECTION PROGRESS RAIL ====================== -->
+  <nav class="progress-rail" id="progressRail" aria-label="Page shortcuts">
+    <a href="#top" aria-label="Page top"><span aria-hidden="true">Top</span></a>
+    <a href="#overview" aria-label="Overview"><span aria-hidden="true">Overview</span></a>
+    <a href="#depth" aria-label="In depth"><span aria-hidden="true">In depth</span></a>
+    <a href="#faq" aria-label="FAQ"><span aria-hidden="true">FAQ</span></a>
+    <a href="contact.html" aria-label="Contact page"><span aria-hidden="true">Contact</span></a>
+  </nav>
+
+  <!-- ====================== HUD STATUS READOUT ====================== -->
+  <div class="hud" id="hud" aria-hidden="true">
+    <span class="hud-dot"></span>
+    <span id="hudSection">Intro</span>
+    <span aria-hidden="true">·</span>
+    <span id="hudScroll">000%</span>
+    <span aria-hidden="true">·</span>
+    <span class="hud-fps" id="hudFps">-- fps</span>
+    <span aria-hidden="true">·</span>
+    <span class="hud-kbd">Ctrl K</span>
+  </div>
+
+  <!-- ====================== COMMAND PALETTE ====================== -->
+  <div class="cmdk-backdrop" id="cmdkBackdrop">
+    <div class="cmdk" role="dialog" aria-modal="true" aria-label="Command menu">
+      <input class="cmdk-input" id="cmdkInput" type="text" placeholder="Type a command or search…" aria-label="Search commands" aria-controls="cmdkList" aria-autocomplete="list" aria-expanded="false" role="combobox" />
+      <ul class="cmdk-list" id="cmdkList" role="listbox" aria-label="Commands"></ul>
+      <div class="cmdk-empty" id="cmdkEmpty" hidden>No matching command.</div>
+      <div class="cmdk-foot"><span>↑↓ navigate</span><span>↵ select</span><span>esc close</span></div>
+    </div>
+  </div>
+
+  <!-- ====================== TOAST ====================== -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

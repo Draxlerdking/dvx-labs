@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#070812"/>
+      <stop offset="0.55" stop-color="#111424"/>
+      <stop offset="1" stop-color="#070812"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#A7ADC2" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="1010" cy="120" r="300" fill="#8B5CF6" opacity="0.14"/>
+  <circle cx="160" cy="560" r="260" fill="#22D3EE" opacity="0.10"/>
+  <g font-family="'Space Grotesk', 'Segoe UI', sans-serif">
+    <rect x="84" y="150" width="72" height="72" rx="18" fill="none" stroke="url(#acc)" stroke-width="4"/>
+    <path d="M102 168 L138 204 M138 168 L102 204" stroke="url(#acc)" stroke-width="6" stroke-linecap="round"/>
+    <text x="172" y="204" font-size="44" font-weight="600" fill="#F7F8FF">DVX Labs</text>
+    <text x="84" y="330" font-size="92" font-weight="700" fill="#F7F8FF">Digital ideas,</text>
+    <text x="84" y="430" font-size="92" font-weight="700" fill="url(#acc)">built real.</text>
+    <text x="86" y="500" font-size="26" font-weight="500" fill="#A7ADC2" font-family="'IBM Plex Mono', monospace">STRATEGY / DESIGN / CODE / LAUNCH</text>
+  </g>
+</svg>

@@ -1,0 +1,81 @@
+<!-- ====================== CONTACT ====================== -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Contact</p>
+          <h2 class="section-title" id="contact-title" data-scramble>Tell us what you're building.</h2>
+          <p class="section-copy">A short brief is enough—we'll reply with honest feedback on scope, timing and fit.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <p>Prefer email? Write to us directly and include the same details.</p>
+            <ul class="contact-meta">
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 6L22 7"/></svg>
+                <div><span class="cm-lbl">Email</span><a href="mailto:hello@dvxlabs.example.com">hello@dvxlabs.example.com</a><!-- PLACEHOLDER: real email --></div>
+              </li>
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                <div><span class="cm-lbl">Response time</span><span>Within 1–2 business days</span></div>
+              </li>
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg>
+                <div><span class="cm-lbl">Availability</span><span>Available for select projects</span></div>
+              </li>
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                <div><span class="cm-lbl">GitHub</span><a href="https://github.com/dvxlabs" rel="noopener noreferrer">github.com/dvxlabs</a><!-- PLACEHOLDER --></div>
+              </li>
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <div><span class="cm-lbl">LinkedIn</span><a href="https://www.linkedin.com/company/dvxlabs" rel="noopener noreferrer">linkedin.com/company/dvxlabs</a><!-- PLACEHOLDER --></div>
+              </li>
+            </ul>
+          </div>
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+                <span class="field-error" id="f-name-err" role="status"></span>
+              </div>
+              <div class="field">
+                <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com" />
+                <span class="field-error" id="f-email-err" role="status"></span>
+              </div>
+              <div class="field full">
+                <label for="f-type">Project type</label>
+                <select id="f-type" name="projectType">
+                  <option value="" selected>Select a project type</option>
+                  <option>Website</option>
+                  <option>Web application / dashboard</option>
+                  <option>E-commerce</option>
+                  <option>Booking system</option>
+                  <option>API / backend</option>
+                  <option>Something else</option>
+                </select>
+                <span class="field-error" role="status"></span>
+              </div>
+              <div class="field full">
+                <label for="f-msg">Project brief <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="f-msg" name="message" rows="5" required placeholder="What are you building, and what does success look like?"></textarea>
+                <span class="field-error" id="f-msg-err" role="status"></span>
+              </div>
+              <div class="field full">
+                <button class="btn btn-primary btn-lg magnetic" type="submit">Send project brief <span class="arrow" aria-hidden="true">→</span></button>
+                <p class="form-note">Your details are used only to respond to your enquiry.</p>
+              </div>
+            </div>
+          </form>
+          <div class="form-success" id="formSuccess" role="status" tabindex="-1">
+            <div class="big-check" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <h3>Brief received.</h3>
+            <p>Thanks for reaching out—we'll reply within 1–2 business days.</p>
+            <!-- PLACEHOLDER: connect a real form backend (Formspree, Basin, or own endpoint) before launch -->
+          </div>
+        </div>
+      </div>
+    </section>
